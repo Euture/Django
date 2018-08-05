@@ -13,8 +13,12 @@ class FeedbackFormView(TemplateView, FormView):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             feedback = form.save()
+            msg = 'Имя : ' + feedback.name + '\n '
+            msg += 'Телефон : ' + feedback.phone + '\n '
+            msg += 'Сообщение : ' + feedback.text + '\n'
+            msg += 'Дата : ' + feedback.created_date.strftime(" %d.%m.Y %I:%M%p")
+            send_mail('Заявка', msg, settings.EMAIL_HOST_USER, ['gts5660gio@gmail.com'])
             feedback.save()
-            #send_mail('Тема', 'Тело письма', settings.EMAIL_HOST_USER, ['gts5660gio@gmail.com'])
         return super().post(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
