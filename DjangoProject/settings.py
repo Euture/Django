@@ -27,7 +27,7 @@ if DEBUG:
 else:
     SITE_URL = '89.223.92.136/'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000']
 
 with open('etc/allowed_hosts.txt') as f:
     ALLOWED_HOSTS.extend(f.read().strip().split('\n'))
@@ -35,6 +35,9 @@ with open('etc/allowed_hosts.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 
 # Application definition
 
@@ -122,7 +125,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 

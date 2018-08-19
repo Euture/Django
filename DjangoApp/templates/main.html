@@ -1,11 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
 <head>
+    <!-- Basic Page Needs -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Logistics Transportation</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Boostrap style -->
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/bootstrap.min.css">
+
+    <!-- REVOLUTION LAYERS STYLES -->
+    <link rel="stylesheet" type="text/css" href="{% static '/revolution/css/layers.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/style.css' %}">
+
+    <!-- Ionicons style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/ionicons.min.css' %}">
+
+    <!-- Reponsive -->
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/responsive.css' %}">
+
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/colors/color1.css" id="colors' %}">
+
+    <!-- Favicon -->
+    <link href="{% static 'icon/cropped-phone-192x192.jpg' %}" rel="icon">
+    <link href="{% static 'icon/cropped-phone-180x180.jpg' %}"rel="icon" >
+    <link href="{% static 'icon/favicon.jpg' %}" rel="shortcut icon">
+
 </head>
 {% block body %}
-      <h1>Обратная связь</h1>
+    <div class="top header-style2">
+        <div class="container">
+            <div class="content-left">
+                <ul class="flat-infomation">
+                    <li class="phone">
+                        <i class="fa fa-phone"></i>Наш номер: +7 999 199 39 85
+                    </li>
+                    <li class="email">
+                        <i class="fa fa-envelope"></i>
+                        <a title="">Email: support24-7@gmail.com</a>
+                    </li>
+                </ul><!-- /.flat-infomation -->
+            </div><!-- /.content-left -->
+            <div class="content-right">
+                <ul class="flat-social">
+                    <li class="facebook">
+                        <a href="#" title=""><i class="fa fa-vk"></i></a>
+                    </li>
+                </ul><!-- /.flat-social -->
+                <div class="info-top-right">
+                    <a href="#" class="appoinment" title="">Оставить заявку</a>
+                </div>
+            </div><!-- /.content-right -->
+        </div><!-- /.container -->
+    </div>
+        <section class="header style2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-wrap">
+                        <div class="header-content">
+                            <ul>
+                                <li>
+                                    <i class="ion-location"></i>
+                                    <strong>Адрес офиса</strong>
+                                    <p>Шинерпоси</p>
+                                </li>
+                                <li>
+                                    <i class="ion-android-time"></i>
+                                    <strong>Время работы</strong>
+                                    <p>
+                                        Пон - Суббота: 8.00 - 20.00
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="ion-android-call"></i>
+                                    <strong>Наш номер</strong>
+                                    <p>
+                                        +7 999 199 39 85
+                                    </p></li>
+                            </ul>
+                        </div><!-- /.header-content -->
+                    </div><!-- /.header-wrap -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <div class="nav header-style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="nav-wrap">
+                            <div class="btn-menu">
+                                <span></span>
+                            </div> <!-- mobile menu button -->
+                            <nav id="mainnav" class="mainnav">
+                                <ul class="menu">
+                                    <li class="active">
+                                        <a href="index.html" title="">Главная</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html" title="">О компании</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="services-v1.html" title="">Калькулятор</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" title="">Контакты</a>
+                                    </li>
+                                </ul><!-- /.menu -->
+                            </nav><!-- nav -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.header style2 -->
+        <div class="container">
+            <div id="rev_slider_1078_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export" data-source="gallery" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+            <!-- START REVOLUTION SLIDER 5.3.0.2 auto mode -->
+                <img src="{% static "images/slider/slider-01.jpg" %}" alt="My image"/>
+            </div>
+        </div>
+    </section>
+
+    <h1>Обратная связь</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
